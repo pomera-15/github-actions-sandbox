@@ -10,8 +10,12 @@ jobs:
       - name: Error 
       - run: exit 1
 
+  hello2:
+    runs-on: ubuntu-latest
+    needs: [hello]  # 先のジョブが終わった後に実行
+    if: always()  # 成功・失敗に関わらず実行
       - name: Echo How Stop
-      - run: echo "エラーが起きるとここは実行される？されない？"
+      - run: echo "エラーが起きても実行されるはず"
 
       - name: Checkout
       - uses: actions/checkout@v4
