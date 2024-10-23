@@ -1,0 +1,17 @@
+name: Hello
+on: push
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello, world
+      - run: echo "Hello, world"
+
+      - name: Error 
+      - run: exit 1
+
+      - name: Echo How Stop
+      - run: echo "エラーが起きるとここは実行される？されない？"
+
+      - name: Checkout
+      - uses: actions/checkout@v4
