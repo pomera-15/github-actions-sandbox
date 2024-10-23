@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Hello, world
-      - run: echo "Hello, world"
+        run: echo "Hello, world"
 
       - name: Error 
-      - run: exit 1
+        run: exit 1
 
   hello2:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
     if: always()  # 成功・失敗に関わらず実行
     steps:
       - name: Echo How Stop
-      - run: echo "エラーが起きても実行されるはず"
+        run: echo "エラーが起きても実行されるはず"
 
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
